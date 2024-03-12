@@ -20,10 +20,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 $("#postingbtn").click(async function () {
-  let image = $("#image").val();
-  let title = $("#title").val();
-  let star = $("#star").val();
-  let coment = $("#coment").val();
+  let image = $(".image").val();
+  let title = $(".title").val();
+  let star = $(".star").val();
+  let coment = $(".coment").val();
 
   let doc = {
     "image": image,
@@ -85,8 +85,8 @@ $("#savebtn").click(async function () {
     <input type="email" class="form-control" id="title" placeholder="영화 제목" />
     <label for="floatingInput">영화 제목</label>
     <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">별점</label>
-      <select class="form-select" id="star">
+      <label class="input-group-text" id="star" for="inputGroupSelect01">별점</label>
+      <select class="form-select" id="inputGroupSelect01">
         <option selected>별점 선택</option>
         <option value="⭐">⭐</option>
         <option value="⭐⭐">⭐⭐</option>
@@ -103,5 +103,8 @@ $("#savebtn").click(async function () {
   </div>`);
 
   $("#postingbox").toggle();
-  $("#postingbox").style.display = "inline";
+});
+
+$("#more_info_btn").click(function () {
+  alert("준비되지 않았습니다");
 });
